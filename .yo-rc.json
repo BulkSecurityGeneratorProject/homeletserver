@@ -31,6 +31,8 @@
     "jhipsterVersion": "4.14.4",
     "packageFolder": "com/fantosoft/homeletserver",
     "jwtSecretKey": "b984bba4fad6fc112342173d98b51f0320eeb885",
-    "jhiPrefix": "jhi"
+    "jhiPrefix": "jhi",
+    "herokuDeployType": "jar",
+    "herokuAppName": "homeletserver"
   }
 }
