@@ -22,7 +22,7 @@
             <th jhiSortBy="price"><span>Price</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="size"><span>Size</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="image"><span>Image</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="productCategory.id"><span>Product Category</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="productCategory.name"><span>Product Category</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
@@ -41,7 +41,7 @@
                 </td>
                 <td>
                     <div *ngIf="product.productCategory">
-                        <a [routerLink]="['../product-category', product.productCategory?.id ]" >{{product.productCategory?.id}}</a>
+                        <a [routerLink]="['../product-category', product.productCategory?.id ]" >{{product.productCategory?.name}}</a>
                     </div>
                 </td>
                 <td class="text-right">

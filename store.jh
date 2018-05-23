@@ -1,97 +1,106 @@
-/**
-hsh online store
-*/
+// JDL definition for application 'homeletserver' generated with command 'jhipster export-jdl'
 
-entity Product {
-	name String required
-    description String
-    price Long required min(0)
-    size Size required
-    image ImageBlob
+/**
+ * hsh online store
+ */
+entity Product (product) {
+  name String required,
+  description String,
+  price Long required min(0),
+  size Size required,
+  image ImageBlob
+}
+entity ProductCategory (product_category) {
+  name String required,
+  description String
+}
+entity Customer (customer) {
+  firstName String required,
+  lastName String required,
+  gender Gender required,
+  email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+  phone String required,
+  addressLine1 String required,
+  addressLine2 String,
+  city String required,
+  country String required
+}
+entity ProductOrder (product_order) {
+  placedDate Instant required,
+  status OrderStatus required,
+  code String required
+}
+entity OrderItem (order_item) {
+  quantity Integer required min(0),
+  totalPrice Long required min(0),
+  status OrderItemStatus required
+}
+entity Invoice (invoice) {
+  date Instant required,
+  details String,
+  status InvoiceStatus required,
+  paymentMethod PaymentMethod required,
+  paymentDate Instant required,
+  paymentAmount BigDecimal required,
+  code String required
+}
+entity Shipment (shipment) {
+  trackingCode String,
+  date Instant required,
+  details String
 }
 
 enum Size {
-	S, M, L, XL, XXL
+  S,
+  M,
+  L,
+  XL,
+  XXL
 }
 
-entity ProductCategory {
-	name String required
-    description String
-}
-
-entity Customer {
-	firstName String required
-    lastName String required 
-    gender Gender required
-    email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
-    phone String required 
-    addressLine1 String required
-    addressLine2 String 
-    city String required
-    country String required
-}
 enum Gender {
-	MALE, FEMALE, OTHER
-}
-
-entity ProductOrder {
-	placedDate Instant required
-    status OrderStatus required
-    code String required
+  MALE,
+  FEMALE,
+  OTHER
 }
 
 enum OrderStatus {
-	COMPLETED, PENDING, CANCELLED
-}
-
-entity OrderItem {
-	quantity Integer required min(0)
-    totalPrice Long required min(0)
-    status OrderItemStatus required
+  COMPLETED,
+  PENDING,
+  CANCELLED
 }
 
 enum OrderItemStatus {
-	AVAILABLE, OUT_OF_STOCK, BACK_ORDER
-}
-
-entity Invoice {
-	date Instant required
-    details String
-    status InvoiceStatus required
-    paymentMethod PaymentMethod required
-    paymentDate Instant required
-    paymentAmount BigDecimal required
+  AVAILABLE,
+  OUT_OF_STOCK,
+  BACK_ORDER
 }
 
 enum InvoiceStatus {
-	PAID, ISSUED, CANCELLED
+  PAID,
+  ISSUED,
+  CANCELLED
 }
 
 enum PaymentMethod {
-	CREDIT_CARD, CASH_ON_DELIVERY, PAYPAL
-}
-
-entity Shipment {
-	trackingCode String
-    date Instant required
-    details String
+  CREDIT_CARD,
+  CASH_ON_DELIVERY,
+  PAYPAL
 }
 
 relationship OneToOne {
-	Customer{user} to User
+  Customer{user(login) required} to User
 }
-
-relationship ManyToOne {
-	OrderItem{product} to Product
-}
-
 relationship OneToMany {
-	Customer{order} to ProductOrder{customer},
-    ProductOrder{orderItem} to OrderItem{order},
-    ProductOrder{invoice} to Invoice{order},
-    Invoice{shipment} to Shipment{invoice},
-    ProductCategory{product} to Product{productCategory}
+  ProductCategory{product} to Product{productCategory(name)},
+  Customer{order} to ProductOrder{customer(email) required},
+  ProductOrder{orderItem} to OrderItem{order(code) required},
+  ProductOrder{invoice} to Invoice{order(code) required},
+  Invoice{shipment} to Shipment{invoice(code) required}
+}
+relationship ManyToOne {
+  OrderItem{product(name) required} to Product
 }
 
-service * with serviceClass
-paginate Product, Customer, ProductOrder, Invoice, Shipment, OrderItem with pagination
+paginate Product, Customer, ProductOrder, OrderItem, Invoice, Shipment with pagination
+service Product, ProductCategory, Customer, ProductOrder, OrderItem, Invoice, Shipment with serviceClass

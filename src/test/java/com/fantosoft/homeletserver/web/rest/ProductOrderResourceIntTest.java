@@ -3,6 +3,7 @@ package com.fantosoft.homeletserver.web.rest;
 import com.fantosoft.homeletserver.HomeletserverApp;
 
 import com.fantosoft.homeletserver.domain.ProductOrder;
+import com.fantosoft.homeletserver.domain.Customer;
 import com.fantosoft.homeletserver.repository.ProductOrderRepository;
 import com.fantosoft.homeletserver.service.ProductOrderService;
 import com.fantosoft.homeletserver.web.rest.errors.ExceptionTranslator;
@@ -95,6 +96,11 @@ public class ProductOrderResourceIntTest {
             .placedDate(DEFAULT_PLACED_DATE)
             .status(DEFAULT_STATUS)
             .code(DEFAULT_CODE);
+        // Add required entity
+        Customer customer = CustomerResourceIntTest.createEntity(em);
+        em.persist(customer);
+        em.flush();
+        productOrder.setCustomer(customer);
         return productOrder;
     }
 
