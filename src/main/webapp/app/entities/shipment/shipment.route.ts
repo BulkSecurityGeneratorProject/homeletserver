@@ -33,7 +33,7 @@ export const shipmentRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Shipments'
+            pageTitle: 'homeletserverApp.shipment.home.title'
         },
         canActivate: [UserRouteAccessService]
     }, {
@@ -41,7 +41,7 @@ export const shipmentRoute: Routes = [
         component: ShipmentDetailComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Shipments'
+            pageTitle: 'homeletserverApp.shipment.home.title'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -53,7 +53,7 @@ export const shipmentPopupRoute: Routes = [
         component: ShipmentPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Shipments'
+            pageTitle: 'homeletserverApp.shipment.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -63,7 +63,7 @@ export const shipmentPopupRoute: Routes = [
         component: ShipmentPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Shipments'
+            pageTitle: 'homeletserverApp.shipment.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -73,7 +73,7 @@ export const shipmentPopupRoute: Routes = [
         component: ShipmentDeletePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Shipments'
+            pageTitle: 'homeletserverApp.shipment.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

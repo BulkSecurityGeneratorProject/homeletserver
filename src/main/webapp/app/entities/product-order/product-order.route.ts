@@ -33,7 +33,7 @@ export const productOrderRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'ProductOrders'
+            pageTitle: 'homeletserverApp.productOrder.home.title'
         },
         canActivate: [UserRouteAccessService]
     }, {
@@ -41,7 +41,7 @@ export const productOrderRoute: Routes = [
         component: ProductOrderDetailComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'ProductOrders'
+            pageTitle: 'homeletserverApp.productOrder.home.title'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -53,7 +53,7 @@ export const productOrderPopupRoute: Routes = [
         component: ProductOrderPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'ProductOrders'
+            pageTitle: 'homeletserverApp.productOrder.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -63,7 +63,7 @@ export const productOrderPopupRoute: Routes = [
         component: ProductOrderPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'ProductOrders'
+            pageTitle: 'homeletserverApp.productOrder.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -73,7 +73,7 @@ export const productOrderPopupRoute: Routes = [
         component: ProductOrderDeletePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'ProductOrders'
+            pageTitle: 'homeletserverApp.productOrder.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

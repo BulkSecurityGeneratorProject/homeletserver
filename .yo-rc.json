@@ -22,10 +22,11 @@
     "useSass": false,
     "clientPackageManager": "yarn",
     "testFrameworks": [],
-    "enableTranslation": false,
+    "enableTranslation": true,
     "nativeLanguage": "en",
     "languages": [
-      "en"
+      "en",
+      "zh-cn"
     ],
     "clientFramework": "angularX",
     "jhipsterVersion": "4.14.4",

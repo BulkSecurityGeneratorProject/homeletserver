@@ -1,26 +1,26 @@
 
 <div *ngIf="product">
-    <h2><span>Product</span> {{product.id}}</h2>
+    <h2><span jhiTranslate="homeletserverApp.product.detail.title">Product</span> {{product.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row-md jh-entity-details">
-        <dt><span>Name</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.product.name">Name</span></dt>
         <dd>
             <span>{{product.name}}</span>
         </dd>
-        <dt><span>Description</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.product.description">Description</span></dt>
         <dd>
             <span>{{product.description}}</span>
         </dd>
-        <dt><span>Price</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.product.price">Price</span></dt>
         <dd>
             <span>{{product.price}}</span>
         </dd>
-        <dt><span>Size</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.product.size">Size</span></dt>
         <dd>
-            <span>{{product.size}}</span>
+            <span jhiTranslate="{{'homeletserverApp.Size.' + product.size}}">{{product.size}}</span>
         </dd>
-        <dt><span>Image</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.product.image">Image</span></dt>
         <dd>
             <div *ngIf="product.image">
                 <a (click)="openFile(product.imageContentType, product.image)">
@@ -29,7 +29,7 @@
                 {{product.imageContentType}}, {{byteSize(product.image)}}
             </div>
         </dd>
-        <dt><span>Product Category</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.product.productCategory">Product Category</span></dt>
         <dd>
             <div *ngIf="product.productCategory">
                 <a [routerLink]="['/product-category', product.productCategory?.id]">{{product.productCategory?.name}}</a>
@@ -40,7 +40,7 @@
     <button type="submit"
             (click)="previousState()"
             class="btn btn-info">
-        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
     </button>
 
     <button type="button"
@@ -48,6 +48,6 @@
             replaceUrl="true"
             queryParamsHandling="merge"
             class="btn btn-primary">
-        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
     </button>
 </div>

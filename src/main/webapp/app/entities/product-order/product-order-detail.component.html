@@ -1,22 +1,22 @@
 
 <div *ngIf="productOrder">
-    <h2><span>Product Order</span> {{productOrder.id}}</h2>
+    <h2><span jhiTranslate="homeletserverApp.productOrder.detail.title">Product Order</span> {{productOrder.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row-md jh-entity-details">
-        <dt><span>Placed Date</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.productOrder.placedDate">Placed Date</span></dt>
         <dd>
             <span>{{productOrder.placedDate | date:'medium'}}</span>
         </dd>
-        <dt><span>Status</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.productOrder.status">Status</span></dt>
         <dd>
-            <span>{{productOrder.status}}</span>
+            <span jhiTranslate="{{'homeletserverApp.OrderStatus.' + productOrder.status}}">{{productOrder.status}}</span>
         </dd>
-        <dt><span>Code</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.productOrder.code">Code</span></dt>
         <dd>
             <span>{{productOrder.code}}</span>
         </dd>
-        <dt><span>Customer</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.productOrder.customer">Customer</span></dt>
         <dd>
             <div *ngIf="productOrder.customer">
                 <a [routerLink]="['/customer', productOrder.customer?.id]">{{productOrder.customer?.email}}</a>
@@ -27,7 +27,7 @@
     <button type="submit"
             (click)="previousState()"
             class="btn btn-info">
-        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
     </button>
 
     <button type="button"
@@ -35,6 +35,6 @@
             replaceUrl="true"
             queryParamsHandling="merge"
             class="btn btn-primary">
-        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
     </button>
 </div>

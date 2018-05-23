@@ -1,9 +1,9 @@
 <div>
     <h2>
-        <span>Products</span>
+        <span jhiTranslate="homeletserverApp.product.home.title">Products</span>
         <button class="btn btn-primary float-right jh-create-entity create-product" [routerLink]="['/', { outlets: { popup: ['product-new'] } }]">
             <span class="fa fa-plus"></span>
-            <span >
+            <span  jhiTranslate="homeletserverApp.product.home.createLabel">
             Create new Product
             </span>
         </button>
@@ -16,13 +16,13 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="name"><span>Name</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="description"><span>Description</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="price"><span>Price</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="size"><span>Size</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="image"><span>Image</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="productCategory.name"><span>Product Category</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="name"><span jhiTranslate="homeletserverApp.product.name">Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="description"><span jhiTranslate="homeletserverApp.product.description">Description</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="price"><span jhiTranslate="homeletserverApp.product.price">Price</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="size"><span jhiTranslate="homeletserverApp.product.size">Size</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="image"><span jhiTranslate="homeletserverApp.product.image">Image</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="productCategory.name"><span jhiTranslate="homeletserverApp.product.productCategory">Product Category</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
@@ -32,7 +32,7 @@
                 <td>{{product.name}}</td>
                 <td>{{product.description}}</td>
                 <td>{{product.price}}</td>
-                <td>{{product.size}}</td>
+                <td jhiTranslate="{{'homeletserverApp.Size.' + product.size}}">{{product.size}}</td>
                 <td>
                     <a *ngIf="product.image" (click)="openFile(product.imageContentType, product.image)">
                         <img [src]="'data:' + product.imageContentType + ';base64,' + product.image" style="max-height: 30px;" alt="product image"/>
@@ -50,7 +50,7 @@
                                 [routerLink]="['../product', product.id ]"
                                 class="btn btn-info btn-sm">
                             <span class="fa fa-eye"></span>
-                            <span class="d-none d-md-inline">View</span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'product/'+ product.id + '/edit'} }]"
@@ -58,7 +58,7 @@
                                 queryParamsHandling="merge"
                                 class="btn btn-primary btn-sm">
                             <span class="fa fa-pencil"></span>
-                            <span class="d-none d-md-inline">Edit</span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'product/'+ product.id + '/delete'} }]"
@@ -66,7 +66,7 @@
                                 queryParamsHandling="merge"
                                 class="btn btn-danger btn-sm">
                             <span class="fa fa-remove"></span>
-                            <span class="d-none d-md-inline">Delete</span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
                     </div>
                 </td>
