@@ -44,7 +44,8 @@ public class ProductService {
      */
     @Transactional(readOnly = true)
     public Page<Product> findAll(Pageable pageable) {
-        log.debug("Request to get all Products");
+        log.debug("hsh degub Request to get all Products");
+        log.info("hsh info Request to get all Products");
         return productRepository.findAll(pageable);
     }
 
