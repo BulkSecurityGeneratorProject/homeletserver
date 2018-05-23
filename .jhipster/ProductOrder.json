@@ -44,7 +44,7 @@
             ]
         }
     ],
-    "changelogDate": "20180522040115",
+    "changelogDate": "20180523065418",
     "entityTableName": "product_order",
     "dto": "no",
     "pagination": "pagination",

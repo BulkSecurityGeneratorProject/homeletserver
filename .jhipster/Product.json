@@ -43,7 +43,7 @@
             "fieldTypeBlobContent": "image"
         }
     ],
-    "changelogDate": "20180522040112",
+    "changelogDate": "20180523065415",
     "javadoc": "hsh online store",
     "entityTableName": "product",
     "dto": "no",

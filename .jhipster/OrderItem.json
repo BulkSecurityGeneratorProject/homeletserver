@@ -42,7 +42,7 @@
             ]
         }
     ],
-    "changelogDate": "20180522040116",
+    "changelogDate": "20180523065419",
     "entityTableName": "order_item",
     "dto": "no",
     "pagination": "pagination",

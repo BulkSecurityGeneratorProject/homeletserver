@@ -38,6 +38,18 @@ public class CacheConfiguration {
             cm.createCache(com.fantosoft.homeletserver.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.fantosoft.homeletserver.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.fantosoft.homeletserver.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.Product.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.ProductCategory.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.ProductCategory.class.getName() + ".products", jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.Customer.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.Customer.class.getName() + ".orders", jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.ProductOrder.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.ProductOrder.class.getName() + ".orderItems", jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.ProductOrder.class.getName() + ".invoices", jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.OrderItem.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.Invoice.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.Invoice.class.getName() + ".shipments", jcacheConfiguration);
+            cm.createCache(com.fantosoft.homeletserver.domain.Shipment.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -25,7 +25,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20180522040118",
+    "changelogDate": "20180523065421",
     "entityTableName": "shipment",
     "dto": "no",
     "pagination": "pagination",

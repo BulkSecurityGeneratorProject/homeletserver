@@ -21,7 +21,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20180522040113",
+    "changelogDate": "20180523065416",
     "entityTableName": "product_category",
     "dto": "no",
     "pagination": "no",
