@@ -3,6 +3,7 @@ package com.fantosoft.homeletserver.web.rest;
 import com.fantosoft.homeletserver.HomeletserverApp;
 
 import com.fantosoft.homeletserver.domain.Customer;
+import com.fantosoft.homeletserver.domain.User;
 import com.fantosoft.homeletserver.repository.CustomerRepository;
 import com.fantosoft.homeletserver.service.CustomerService;
 import com.fantosoft.homeletserver.web.rest.errors.ExceptionTranslator;
@@ -117,6 +118,11 @@ public class CustomerResourceIntTest {
             .addressLine2(DEFAULT_ADDRESS_LINE_2)
             .city(DEFAULT_CITY)
             .country(DEFAULT_COUNTRY);
+        // Add required entity
+        User user = UserResourceIntTest.createEntity(em);
+        em.persist(user);
+        em.flush();
+        customer.setUser(user);
         return customer;
     }
 

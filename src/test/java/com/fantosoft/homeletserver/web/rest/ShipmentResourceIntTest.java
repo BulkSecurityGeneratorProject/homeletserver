@@ -3,6 +3,7 @@ package com.fantosoft.homeletserver.web.rest;
 import com.fantosoft.homeletserver.HomeletserverApp;
 
 import com.fantosoft.homeletserver.domain.Shipment;
+import com.fantosoft.homeletserver.domain.Invoice;
 import com.fantosoft.homeletserver.repository.ShipmentRepository;
 import com.fantosoft.homeletserver.service.ShipmentService;
 import com.fantosoft.homeletserver.web.rest.errors.ExceptionTranslator;
@@ -94,6 +95,11 @@ public class ShipmentResourceIntTest {
             .trackingCode(DEFAULT_TRACKING_CODE)
             .date(DEFAULT_DATE)
             .details(DEFAULT_DETAILS);
+        // Add required entity
+        Invoice invoice = InvoiceResourceIntTest.createEntity(em);
+        em.persist(invoice);
+        em.flush();
+        shipment.setInvoice(invoice);
         return shipment;
     }
 

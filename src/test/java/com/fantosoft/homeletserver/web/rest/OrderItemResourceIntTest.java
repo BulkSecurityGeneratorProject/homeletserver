@@ -3,6 +3,8 @@ package com.fantosoft.homeletserver.web.rest;
 import com.fantosoft.homeletserver.HomeletserverApp;
 
 import com.fantosoft.homeletserver.domain.OrderItem;
+import com.fantosoft.homeletserver.domain.Product;
+import com.fantosoft.homeletserver.domain.ProductOrder;
 import com.fantosoft.homeletserver.repository.OrderItemRepository;
 import com.fantosoft.homeletserver.service.OrderItemService;
 import com.fantosoft.homeletserver.web.rest.errors.ExceptionTranslator;
@@ -93,6 +95,16 @@ public class OrderItemResourceIntTest {
             .quantity(DEFAULT_QUANTITY)
             .totalPrice(DEFAULT_TOTAL_PRICE)
             .status(DEFAULT_STATUS);
+        // Add required entity
+        Product product = ProductResourceIntTest.createEntity(em);
+        em.persist(product);
+        em.flush();
+        orderItem.setProduct(product);
+        // Add required entity
+        ProductOrder order = ProductOrderResourceIntTest.createEntity(em);
+        em.persist(order);
+        em.flush();
+        orderItem.setOrder(order);
         return orderItem;
     }
 
