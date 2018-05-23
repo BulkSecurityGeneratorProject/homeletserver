@@ -33,7 +33,7 @@ export const invoiceRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Invoices'
+            pageTitle: 'homeletserverApp.invoice.home.title'
         },
         canActivate: [UserRouteAccessService]
     }, {
@@ -41,7 +41,7 @@ export const invoiceRoute: Routes = [
         component: InvoiceDetailComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Invoices'
+            pageTitle: 'homeletserverApp.invoice.home.title'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -53,7 +53,7 @@ export const invoicePopupRoute: Routes = [
         component: InvoicePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Invoices'
+            pageTitle: 'homeletserverApp.invoice.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -63,7 +63,7 @@ export const invoicePopupRoute: Routes = [
         component: InvoicePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Invoices'
+            pageTitle: 'homeletserverApp.invoice.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -73,7 +73,7 @@ export const invoicePopupRoute: Routes = [
         component: InvoiceDeletePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Invoices'
+            pageTitle: 'homeletserverApp.invoice.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

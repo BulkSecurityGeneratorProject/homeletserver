@@ -1,46 +1,46 @@
 
 <div *ngIf="customer">
-    <h2><span>Customer</span> {{customer.id}}</h2>
+    <h2><span jhiTranslate="homeletserverApp.customer.detail.title">Customer</span> {{customer.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row-md jh-entity-details">
-        <dt><span>First Name</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.customer.firstName">First Name</span></dt>
         <dd>
             <span>{{customer.firstName}}</span>
         </dd>
-        <dt><span>Last Name</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.customer.lastName">Last Name</span></dt>
         <dd>
             <span>{{customer.lastName}}</span>
         </dd>
-        <dt><span>Gender</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.customer.gender">Gender</span></dt>
         <dd>
-            <span>{{customer.gender}}</span>
+            <span jhiTranslate="{{'homeletserverApp.Gender.' + customer.gender}}">{{customer.gender}}</span>
         </dd>
-        <dt><span>Email</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.customer.email">Email</span></dt>
         <dd>
             <span>{{customer.email}}</span>
         </dd>
-        <dt><span>Phone</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.customer.phone">Phone</span></dt>
         <dd>
             <span>{{customer.phone}}</span>
         </dd>
-        <dt><span>Address Line 1</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.customer.addressLine1">Address Line 1</span></dt>
         <dd>
             <span>{{customer.addressLine1}}</span>
         </dd>
-        <dt><span>Address Line 2</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.customer.addressLine2">Address Line 2</span></dt>
         <dd>
             <span>{{customer.addressLine2}}</span>
         </dd>
-        <dt><span>City</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.customer.city">City</span></dt>
         <dd>
             <span>{{customer.city}}</span>
         </dd>
-        <dt><span>Country</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.customer.country">Country</span></dt>
         <dd>
             <span>{{customer.country}}</span>
         </dd>
-        <dt><span>User</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.customer.user">User</span></dt>
         <dd>
             {{customer.user?.login}}
         </dd>
@@ -49,7 +49,7 @@
     <button type="submit"
             (click)="previousState()"
             class="btn btn-info">
-        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
     </button>
 
     <button type="button"
@@ -57,6 +57,6 @@
             replaceUrl="true"
             queryParamsHandling="merge"
             class="btn btn-primary">
-        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
     </button>
 </div>

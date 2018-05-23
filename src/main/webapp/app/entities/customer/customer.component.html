@@ -1,9 +1,9 @@
 <div>
     <h2>
-        <span>Customers</span>
+        <span jhiTranslate="homeletserverApp.customer.home.title">Customers</span>
         <button class="btn btn-primary float-right jh-create-entity create-customer" [routerLink]="['/', { outlets: { popup: ['customer-new'] } }]">
             <span class="fa fa-plus"></span>
-            <span >
+            <span  jhiTranslate="homeletserverApp.customer.home.createLabel">
             Create new Customer
             </span>
         </button>
@@ -16,17 +16,17 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="firstName"><span>First Name</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="lastName"><span>Last Name</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="gender"><span>Gender</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="email"><span>Email</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="phone"><span>Phone</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="addressLine1"><span>Address Line 1</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="addressLine2"><span>Address Line 2</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="city"><span>City</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="country"><span>Country</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="user.login"><span>User</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="firstName"><span jhiTranslate="homeletserverApp.customer.firstName">First Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lastName"><span jhiTranslate="homeletserverApp.customer.lastName">Last Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="gender"><span jhiTranslate="homeletserverApp.customer.gender">Gender</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="email"><span jhiTranslate="homeletserverApp.customer.email">Email</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="phone"><span jhiTranslate="homeletserverApp.customer.phone">Phone</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="addressLine1"><span jhiTranslate="homeletserverApp.customer.addressLine1">Address Line 1</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="addressLine2"><span jhiTranslate="homeletserverApp.customer.addressLine2">Address Line 2</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="city"><span jhiTranslate="homeletserverApp.customer.city">City</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="country"><span jhiTranslate="homeletserverApp.customer.country">Country</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="user.login"><span jhiTranslate="homeletserverApp.customer.user">User</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
@@ -35,7 +35,7 @@
                 <td><a [routerLink]="['../customer', customer.id ]">{{customer.id}}</a></td>
                 <td>{{customer.firstName}}</td>
                 <td>{{customer.lastName}}</td>
-                <td>{{customer.gender}}</td>
+                <td jhiTranslate="{{'homeletserverApp.Gender.' + customer.gender}}">{{customer.gender}}</td>
                 <td>{{customer.email}}</td>
                 <td>{{customer.phone}}</td>
                 <td>{{customer.addressLine1}}</td>
@@ -51,7 +51,7 @@
                                 [routerLink]="['../customer', customer.id ]"
                                 class="btn btn-info btn-sm">
                             <span class="fa fa-eye"></span>
-                            <span class="d-none d-md-inline">View</span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'customer/'+ customer.id + '/edit'} }]"
@@ -59,7 +59,7 @@
                                 queryParamsHandling="merge"
                                 class="btn btn-primary btn-sm">
                             <span class="fa fa-pencil"></span>
-                            <span class="d-none d-md-inline">Edit</span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'customer/'+ customer.id + '/delete'} }]"
@@ -67,7 +67,7 @@
                                 queryParamsHandling="merge"
                                 class="btn btn-danger btn-sm">
                             <span class="fa fa-remove"></span>
-                            <span class="d-none d-md-inline">Delete</span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
                     </div>
                 </td>

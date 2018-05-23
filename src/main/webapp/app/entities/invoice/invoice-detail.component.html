@@ -1,38 +1,38 @@
 
 <div *ngIf="invoice">
-    <h2><span>Invoice</span> {{invoice.id}}</h2>
+    <h2><span jhiTranslate="homeletserverApp.invoice.detail.title">Invoice</span> {{invoice.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row-md jh-entity-details">
-        <dt><span>Date</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.invoice.date">Date</span></dt>
         <dd>
             <span>{{invoice.date | date:'medium'}}</span>
         </dd>
-        <dt><span>Details</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.invoice.details">Details</span></dt>
         <dd>
             <span>{{invoice.details}}</span>
         </dd>
-        <dt><span>Status</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.invoice.status">Status</span></dt>
         <dd>
-            <span>{{invoice.status}}</span>
+            <span jhiTranslate="{{'homeletserverApp.InvoiceStatus.' + invoice.status}}">{{invoice.status}}</span>
         </dd>
-        <dt><span>Payment Method</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.invoice.paymentMethod">Payment Method</span></dt>
         <dd>
-            <span>{{invoice.paymentMethod}}</span>
+            <span jhiTranslate="{{'homeletserverApp.PaymentMethod.' + invoice.paymentMethod}}">{{invoice.paymentMethod}}</span>
         </dd>
-        <dt><span>Payment Date</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.invoice.paymentDate">Payment Date</span></dt>
         <dd>
             <span>{{invoice.paymentDate | date:'medium'}}</span>
         </dd>
-        <dt><span>Payment Amount</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.invoice.paymentAmount">Payment Amount</span></dt>
         <dd>
             <span>{{invoice.paymentAmount}}</span>
         </dd>
-        <dt><span>Code</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.invoice.code">Code</span></dt>
         <dd>
             <span>{{invoice.code}}</span>
         </dd>
-        <dt><span>Order</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.invoice.order">Order</span></dt>
         <dd>
             <div *ngIf="invoice.order">
                 <a [routerLink]="['/product-order', invoice.order?.id]">{{invoice.order?.code}}</a>
@@ -43,7 +43,7 @@
     <button type="submit"
             (click)="previousState()"
             class="btn btn-info">
-        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
     </button>
 
     <button type="button"
@@ -51,6 +51,6 @@
             replaceUrl="true"
             queryParamsHandling="merge"
             class="btn btn-primary">
-        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
     </button>
 </div>

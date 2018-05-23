@@ -1,28 +1,28 @@
 
 <div *ngIf="orderItem">
-    <h2><span>Order Item</span> {{orderItem.id}}</h2>
+    <h2><span jhiTranslate="homeletserverApp.orderItem.detail.title">Order Item</span> {{orderItem.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row-md jh-entity-details">
-        <dt><span>Quantity</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.orderItem.quantity">Quantity</span></dt>
         <dd>
             <span>{{orderItem.quantity}}</span>
         </dd>
-        <dt><span>Total Price</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.orderItem.totalPrice">Total Price</span></dt>
         <dd>
             <span>{{orderItem.totalPrice}}</span>
         </dd>
-        <dt><span>Status</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.orderItem.status">Status</span></dt>
         <dd>
-            <span>{{orderItem.status}}</span>
+            <span jhiTranslate="{{'homeletserverApp.OrderItemStatus.' + orderItem.status}}">{{orderItem.status}}</span>
         </dd>
-        <dt><span>Product</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.orderItem.product">Product</span></dt>
         <dd>
             <div *ngIf="orderItem.product">
                 <a [routerLink]="['/product', orderItem.product?.id]">{{orderItem.product?.name}}</a>
             </div>
         </dd>
-        <dt><span>Order</span></dt>
+        <dt><span jhiTranslate="homeletserverApp.orderItem.order">Order</span></dt>
         <dd>
             <div *ngIf="orderItem.order">
                 <a [routerLink]="['/product-order', orderItem.order?.id]">{{orderItem.order?.code}}</a>
@@ -33,7 +33,7 @@
     <button type="submit"
             (click)="previousState()"
             class="btn btn-info">
-        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
     </button>
 
     <button type="button"
@@ -41,6 +41,6 @@
             replaceUrl="true"
             queryParamsHandling="merge"
             class="btn btn-primary">
-        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
     </button>
 </div>

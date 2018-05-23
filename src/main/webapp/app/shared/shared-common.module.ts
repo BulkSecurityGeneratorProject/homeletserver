@@ -5,6 +5,8 @@ import locale from '@angular/common/locales/en';
 
 import {
     HomeletserverSharedLibsModule,
+    JhiLanguageHelper,
+    FindLanguageFromKeyPipe,
     JhiAlertComponent,
     JhiAlertErrorComponent
 } from './';
@@ -14,10 +16,12 @@ import {
         HomeletserverSharedLibsModule
     ],
     declarations: [
+        FindLanguageFromKeyPipe,
         JhiAlertComponent,
         JhiAlertErrorComponent
     ],
     providers: [
+        JhiLanguageHelper,
         Title,
         {
             provide: LOCALE_ID,
@@ -26,6 +30,7 @@ import {
     ],
     exports: [
         HomeletserverSharedLibsModule,
+        FindLanguageFromKeyPipe,
         JhiAlertComponent,
         JhiAlertErrorComponent
     ]
